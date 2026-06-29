@@ -108,21 +108,4 @@ pub fn build(b: *std.Build) void {
     const test_step = b.step("test", "Run tests");
     test_step.dependOn(&run_mod_tests.step);
     test_step.dependOn(&run_exe_tests.step);
-
-    const testing = b.addObject(.{
-        .name = "testing",
-        .root_module = b.createModule(.{
-            .root_source_file = b.path("src/test.zig"),
-            .target = b.resolveTargetQuery(.{ .cpu_arch = .aarch64 }),
-            .optimize = .ReleaseSmall,
-        }),
-    });
-    b.getInstallStep().dependOn(&b.addInstallBinFile(
-        testing.getEmittedBin(),
-        "test.o",
-    ).step);
-    b.getInstallStep().dependOn(&b.addInstallBinFile(
-        testing.getEmittedLlvmIr(),
-        "test.ll",
-    ).step);
 }
