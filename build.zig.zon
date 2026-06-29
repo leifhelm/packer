@@ -33,12 +33,12 @@
     // internet connectivity.
     .dependencies = .{
         .elfy = .{
-            // .url = "git+https://github.com/rawC1nnamon/elfy.zig#178d80ebd976b82d1e426eda2c5de91bcd6c16df",
-            // .hash = "elfy-0.1.0-BML8Mv8fAQDw2qv5HOZMg70uV2JyEKkceilNG9i4uDKD",
-            .path = "../elfy.zig",
+            .url = "git+https://github.com/leifhelm/elfy.zig.git#f255240ef2c8ad033fd67c5b4f53767ae83a219b",
+            .hash = "elfy-0.1.0-BML8Mk0hAQDYd5NXyKDuD3QLDPRLMtlk8ThwMpKQSjSq",
         },
         .ucl = .{
-            .path = "../ucl-zig",
+            .url = "git+https://github.com/leifhelm/ucl-zig.git#39ea32f4fb3578e9dc48393061eeead4f3fbd5be",
+            .hash = "ucl-0.0.0-vwd2_30VAQAVhBoWo92cc_WDzvT1Cu2tV59PacXvFC3G",
         },
     },
     .paths = .{

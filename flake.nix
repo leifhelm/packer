@@ -11,6 +11,24 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        packer = pkgs.callPackage (
+          {
+            lib,
+            stdenvNoCC,
+            zig,
+            callPackage,
+          }:
+          stdenvNoCC.mkDerivation {
+            pname = "packer";
+            version = "0.1-git";
+            src = ./.;
+            nativeBuildInputs = [ zig ];
+            zigBuildFlags = [
+              "--system"
+              (callPackage ./build.zig.zon.nix { })
+            ];
+          }
+        ) { };
       in
       {
         devShells.default =
@@ -27,6 +45,8 @@
               clang-unwrapped
             ]);
           };
+        packages.default = packer;
+        packages.packer = packer;
       }
     );
 }
