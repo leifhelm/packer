@@ -27,6 +27,14 @@ linkFarm "zig-packages" [
     };
   }
   {
+    name = "clap-0.11.0-oBajB-HnAQDPCKYzwF7rO3qDFwRcD39Q0DALlTSz5H7e";
+    path = fetchgit {
+      url = "https://github.com/Hejsil/zig-clap";
+      rev = "5289e0753cd274d65344bef1c114284c633536ea";
+      hash = "sha256-XytqwtoE0xaR43YustgK68sAQPVfC0Dt+uCs8UTfkbU=";
+    };
+  }
+  {
     name = "elfy-0.1.0-BML8Mk0hAQDYd5NXyKDuD3QLDPRLMtlk8ThwMpKQSjSq";
     path = fetchgit {
       url = "https://github.com/leifhelm/elfy.zig.git";

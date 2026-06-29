@@ -40,6 +40,10 @@
             .url = "git+https://github.com/leifhelm/ucl-zig.git#39ea32f4fb3578e9dc48393061eeead4f3fbd5be",
             .hash = "ucl-0.0.0-vwd2_30VAQAVhBoWo92cc_WDzvT1Cu2tV59PacXvFC3G",
         },
+        .clap = .{
+            .url = "git+https://github.com/Hejsil/zig-clap#5289e0753cd274d65344bef1c114284c633536ea",
+            .hash = "clap-0.11.0-oBajB-HnAQDPCKYzwF7rO3qDFwRcD39Q0DALlTSz5H7e",
+        },
     },
     .paths = .{
         "build.zig",

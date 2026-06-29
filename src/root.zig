@@ -120,12 +120,13 @@ pub const Packer = struct {
     error_context: ?*ErrorContext,
     pad_text: []const u8 = "",
 
-    pub fn init(allocator: Allocator, elf_file: []const u8, error_context: ?*ErrorContext) !Self {
+    pub fn init(allocator: Allocator, elf_file: []const u8, error_context: ?*ErrorContext, pad_text: []const u8) !Self {
         const elf = try elfy.Elf.init(elf_file, .ReadOnly, allocator);
         errdefer elf.deinit();
         return .{
             .elf = elf,
             .error_context = error_context,
+            .pad_text = pad_text,
         };
     }
     pub fn deinit(self: *Self) void {

@@ -8,6 +8,7 @@ pub fn build(b: *std.Build) void {
 
     const elfy = b.dependency("elfy", .{}).module("elfy");
     const ucl = b.dependency("ucl", .{}).module("ucl");
+    const clap = b.dependency("clap", .{}).module("clap");
 
     const generate_decompressors = b.addExecutable(.{
         .name = "gendecomp",
@@ -76,7 +77,10 @@ pub fn build(b: *std.Build) void {
             .target = target,
             .optimize = optimize,
 
-            .imports = &.{.{ .name = "packer", .module = mod }},
+            .imports = &.{
+                .{ .name = "packer", .module = mod },
+                .{ .name = "clap", .module = clap },
+            },
         }),
     });
 
